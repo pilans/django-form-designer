@@ -16,7 +16,9 @@ try:
 except ImportError:  # django < 1.5
     from django.contrib.auth.models import User
 else:
-    User = get_user_model()
+    User = django_settings.AUTH_USER_MODEL
+
+
 
 from form_designer.fields import TemplateTextField, TemplateCharField, ModelNameField, RegexpExpressionField
 from form_designer.utils import get_class
